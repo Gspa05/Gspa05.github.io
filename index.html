@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabriella Sparacio | Teaching Portfolio</title>
+<style>
+:root{
+  --sage:#6f8568;
+  --sage-dark:#4f634b;
+  --sage-light:#eef3ec;
+  --cream:#fbf8f0;
+  --text:#2d2d2d;
+  --muted:#6b6b6b;
+  --card:#ffffff;
+  --border:#e5dccb;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;background:var(--cream);color:var(--text);line-height:1.6}
+.layout{display:flex;min-height:100vh}
+.sidebar{width:310px;background:linear-gradient(180deg,var(--sage),var(--sage-dark));color:white;padding:42px 32px;position:fixed;top:0;bottom:0;left:0;overflow:auto}
+.sidebar h1{font-size:46px;line-height:1.05;margin:25px 0 8px;font-weight:normal}
+.script{font-family:cursive;font-size:44px;display:block;margin-bottom:-10px}
+.sidebar .title{letter-spacing:2px;text-transform:uppercase;font-size:14px;margin-top:20px}
+.sidebar .quote{background:rgba(255,255,255,.12);padding:18px;border-radius:14px;margin-top:35px;font-style:italic}
+.side-item{margin-top:28px}
+.side-item h3{margin:0 0 5px;font-size:18px}
+.side-item p{margin:0;font-size:14px;color:#f5f5f0}
+.main{margin-left:310px;width:calc(100% - 310px)}
+nav{background:#fffdf7;display:flex;justify-content:center;gap:16px;padding:16px 24px;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px rgba(0,0,0,.08);flex-wrap:wrap}
+nav a{color:var(--sage-dark);text-decoration:none;font-size:12px;text-transform:uppercase;letter-spacing:.7px;font-weight:bold}
+nav a:hover{color:#9a8b52}
+.hero{text-align:center;padding:72px 40px 46px;background:#fffdf7}
+.hero h2{font-size:58px;color:var(--sage-dark);margin:0;font-weight:normal}
+.divider{width:160px;height:2px;background:var(--sage);margin:16px auto}
+.hero p{max-width:850px;margin:0 auto;font-size:18px}
+section{max-width:1120px;margin:0 auto;padding:38px 42px}
+.card,.role-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:30px;box-shadow:0 4px 18px rgba(70,80,60,.10);margin-bottom:26px}
+h2.section-title{text-align:center;color:var(--sage-dark);font-size:42px;font-weight:normal;margin:0 0 24px}
+h3,h4{color:var(--sage-dark)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.mini-card{background:var(--sage-light);border-radius:16px;padding:22px;border:1px solid #d9e2d6}
+.button{display:inline-block;background:var(--sage);color:white;padding:11px 18px;border-radius:8px;text-decoration:none;margin:8px 8px 0 0;font-family:Arial,sans-serif;font-size:14px}
+.button:hover{background:var(--sage-dark)}
+.at-a-glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-top:34px}
+.stat{background:var(--sage-light);border:1px solid #d9e2d6;border-radius:16px;padding:20px;text-align:center}
+.stat .emoji{font-size:28px}
+.stat h3{margin:8px 0 4px;font-size:18px}
+.stat p{margin:0;color:var(--muted);font-size:14px}
+.role-card{border-left:6px solid var(--sage)}
+.role-header{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:18px}
+.role-header h3{margin:0;font-size:24px}
+.role-meta{color:var(--muted);font-size:14px;font-family:Arial,sans-serif}
+.tag{background:var(--sage-light);color:var(--sage-dark);border:1px solid #d9e2d6;padding:6px 10px;border-radius:999px;font-family:Arial,sans-serif;font-size:12px;white-space:nowrap;font-weight:bold}
+.role-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.bullet-block{background:#fbfaf5;border:1px solid var(--border);border-radius:14px;padding:18px}
+.bullet-block h4{margin:0 0 8px;font-size:17px}
+.bullet-block ul{margin:0;padding-left:20px}
+.bullet-block li{margin-bottom:7px}
+.recommendation{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.quote-box{background:#f6f3ea;padding:20px;border-radius:12px;font-style:italic;margin:18px 0}
+.photo-grid{display:grid;grid-template-columns:1fr;gap:18px}
+.photo-grid img,.visual-card img{width:100%;border-radius:14px;border:1px solid var(--border);box-shadow:0 4px 16px rgba(70,80,60,.12)}
+.caption{font-size:14px;color:var(--muted);font-style:italic;margin-top:10px}
+iframe{width:100%;height:700px;border:1px solid var(--border);border-radius:10px;background:white}
+.footer{text-align:center;padding:35px;color:var(--muted)}
+.backtop{position:fixed;right:22px;bottom:22px;background:var(--sage);color:white;text-decoration:none;border-radius:999px;padding:10px 14px;box-shadow:0 4px 12px rgba(0,0,0,.2);font-family:Arial,sans-serif}
+@media(max-width:900px){
+  .layout{display:block}
+  .sidebar{position:relative;width:100%;height:auto}
+  .main{margin-left:0;width:100%}
+  .hero h2{font-size:42px}
+  .recommendation{grid-template-columns:1fr}
+  .role-header{display:block}
+}
+</style>
+</head>
+<body id="top">
+<div class="layout">
+<aside class="sidebar">
+  <div style="font-size:42px;">🍎</div>
+  <h1><span class="script">Gabriella</span>Sparacio</h1>
+  <div class="title">Elementary & Special Education Teacher</div>
+  <div class="quote">Creating a nurturing, inclusive classroom where every child feels valued, capable, and excited to learn.</div>
+  <div class="side-item"><h3>Relationship Builder</h3><p>I value meaningful connections with students, families, and colleagues.</p></div>
+  <div class="side-item"><h3>Student Centered</h3><p>I design engaging, differentiated instruction that meets each student where they are.</p></div>
+  <div class="side-item"><h3>Lifelong Learner</h3><p>I reflect, grow, and pursue opportunities to continuously improve my practice.</p></div>
+  <a class="button" href="#contact" style="margin-top:30px;background:white;color:#4f634b;">Contact Me</a>
+</aside>
+
+<main class="main">
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#philosophy">Philosophy</a>
+  <a href="#experience">Experience</a>
+  <a href="#showcase">Showcase</a>
+  <a href="#growth">Growth</a>
+  <a href="#documents">Resume</a>
+  <a href="#recommendations">Recommendations</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero" id="home">
+  <h2>Teaching Portfolio</h2>
+  <div class="divider"></div>
+  <p>Welcome to my professional teaching portfolio. This portfolio highlights my teaching experience, classroom practices, lesson planning, professional growth, and commitment to creating inclusive learning environments for all students.</p>
+  <div class="at-a-glance">
+    <div class="stat"><div class="emoji">🍎</div><h3>NYS Certified</h3><p>Childhood Education (Grades 1-6) & Students With Disabilities (All Grades)</p></div>
+    <div class="stat"><div class="emoji">📚</div><h3>Instructional Experience</h3><p>Preschool, elementary, ICT, ABA & self-contained settings</p></div>
+    <div class="stat"><div class="emoji">🤝</div><h3>Collaborative Educator</h3><p>Families, classroom staff & related service providers</p></div>
+    <div class="stat"><div class="emoji">🌱</div><h3>Growth Mindset</h3><p>Pursuing graduate study in ENL</p></div>
+  </div>
+</div>
+
+<section id="about">
+<h2 class="section-title">About Me</h2>
+<div class="card">
+<p>My name is Gabriella Sparacio, and I am a New York State certified teacher in Childhood Education and Students With Disabilities. I recently completed my first year as a Preschool Special Education Teacher in a 12:1:2 self-contained classroom at Variety Child Learning Center.</p>
+<p>My experiences across preschool, elementary, special education, ABA, student teaching, substitute teaching, and classroom support roles have strengthened my passion for creating structured, supportive, and engaging learning environments where all students can grow academically, socially, emotionally, and behaviorally.</p>
+<div class="grid">
+<div class="mini-card"><h3>Education</h3><ul><li>SUNY Old Westbury — Bachelor’s Degree in Special Education & Childhood Education, 2024</li><li>Nassau Community College — Associate’s Degree in Liberal Arts, 2009</li></ul></div>
+<div class="mini-card"><h3>Initial Certifications</h3><ul><li>Childhood Education (Grades 1-6)</li><li>Students With Disabilities (All Grades), Initial Certificate</li></ul></div>
+<div class="mini-card"><h3>Award</h3><ul><li>SUNY Old Westbury — Academic Achievement</li></ul><h3>Professional Strengths</h3><ul><li>Classroom Management</li><li>Differentiated Instruction</li><li>Parent Communication</li><li>Positive Student Rapport</li><li>Collaboration</li></ul></div>
+</div>
+</div>
+</section>
+
+<section id="philosophy">
+<h2 class="section-title">My Philosophy</h2>
+<div class="grid">
+<div class="card"><h3>Relationships First</h3><p>Students learn best when they feel safe, respected, and understood. I prioritize building trusting relationships so students feel confident taking risks and participating in learning.</p></div>
+<div class="card"><h3>Individualized Instruction</h3><p>Every student learns differently. I use visuals, hands-on materials, small groups, scaffolding, accommodations, and data to meet individual needs while maintaining high expectations.</p></div>
+<div class="card"><h3>Collaboration</h3><p>Families, colleagues, teaching assistants, and related service providers are essential partners. Students make the greatest progress when adults communicate and work toward shared goals.</p></div>
+</div>
+</section>
+
+<section id="experience">
+<h2 class="section-title">Teaching Experience</h2>
+
+<div class="role-card">
+<div class="role-header"><div><h3>Preschool Special Education Teacher — 12:1:2 Self-Contained Classroom</h3><div class="role-meta">Variety Child Learning Center | Levittown, NY | 09/2025-Present</div></div><div class="tag">Current Role</div></div>
+<div class="role-grid">
+<div class="bullet-block"><h4>Instruction & IEP Implementation</h4><ul><li>Develop and implement individualized instruction aligned with students’ IEP goals across academic, social-emotional, communication, and behavioral domains.</li><li>Design developmentally appropriate lessons targeting school readiness, early literacy, early numeracy, communication, play, and social-emotional skills.</li><li>Facilitate whole-group, small-group, and individualized learning activities to support diverse learning needs.</li></ul></div>
+<div class="bullet-block"><h4>Differentiation & Student Support</h4><ul><li>Provide differentiated instruction in a 12:1:2 special education classroom for preschool-aged students with disabilities.</li><li>Use visual supports, hands-on materials, modeling, prompting, and individualized scaffolds to increase access and participation.</li><li>Create a structured, nurturing, and inclusive classroom environment that promotes independence, self-regulation, and positive peer interactions.</li></ul></div>
+<div class="bullet-block"><h4>Behavior & Classroom Management</h4><ul><li>Implement behavior support plans, positive reinforcement systems, and classroom management strategies to promote engagement and student success.</li><li>Use classroom routines, visual schedules, token boards, First-Then supports, and consistent expectations to support transitions and reduce frustration.</li><li>Foster positive student rapport through patience, encouragement, and relationship-based classroom management.</li></ul></div>
+<div class="bullet-block"><h4>Collaboration & Progress Monitoring</h4><ul><li>Collaborate with speech-language pathologists, occupational therapists, physical therapists, social workers, and families to support student growth.</li><li>Collect and analyze student data to monitor IEP progress and guide instructional planning.</li><li>Participate in CSE meetings, annual reviews, and multidisciplinary team meetings to develop and review IEPs.</li></ul></div>
+</div>
+</div>
+
+<div class="role-card">
+<div class="role-header"><div><h3>Applied Behavior Analysis (ABA) Behavior Technician</h3><div class="role-meta">Kids Learning Loft | Williston Park, NY | 12/2019-12/2025</div></div><div class="tag">Behavior Support</div></div>
+<div class="role-grid">
+<div class="bullet-block"><h4>Individualized ABA Support</h4><ul><li>Provided 1:1 individualized ABA therapy for students of varying ages and abilities.</li><li>Implemented interventions including discrete trial training, modeling, PECS, and individualized treatment plans.</li><li>Supported communication, daily living skills, social skills, and goal acquisition through structured sessions.</li></ul></div>
+<div class="bullet-block"><h4>Data & Behavior Intervention</h4><ul><li>Maintained thorough records of student progress to inform instruction and therapy sessions.</li><li>Provided positive reinforcement for desired behaviors and supported self-management techniques.</li><li>Assisted with crisis intervention and de-escalation when needed.</li></ul></div>
+</div>
+</div>
+
+<div class="role-card">
+<div class="role-header"><div><h3>Permanent Substitute Teacher</h3><div class="role-meta">Saltzman East Memorial Elementary School, Farmingdale UFSD | 01/2025-06/2025</div></div><div class="tag">Elementary Experience</div></div>
+<div class="role-grid">
+<div class="bullet-block"><h4>Instruction Across Grade Levels</h4><ul><li>Delivered lessons across various subjects and grade levels in the absence of the classroom teacher.</li><li>Followed and implemented lesson plans while maintaining classroom routines and expectations.</li><li>Gained familiarity with district curriculum and resources including UFLI, Heggerty, i-Ready, and Fundations.</li></ul></div>
+<div class="bullet-block"><h4>Classroom Support</h4><ul><li>Provided small-group reading support using Fundations and UFLI.</li><li>Promoted positive student behavior and effective classroom management.</li><li>Ensured student safety, engagement, and continuity of learning throughout the school day.</li></ul></div>
+</div>
+</div>
+
+<div class="role-card">
+<div class="role-header"><div><h3>Student Teaching Experience</h3><div class="role-meta">Saltzman East Memorial Elementary School, Farmingdale UFSD | Fall 2024</div></div><div class="tag">General Ed & ICT</div></div>
+<div class="role-grid">
+<div class="bullet-block"><h4>1st Grade General Education</h4><ul><li>Designed whole-class and small-group lessons across subject areas based on student needs, learning styles, and interests.</li><li>Infused Next Generation Learning Standards into daily instruction.</li><li>Fostered an organized and supportive learning environment through behavior management, SEL, and relationship-building.</li></ul></div>
+<div class="bullet-block"><h4>3rd Grade ICT Special Education</h4><ul><li>Collaborated with a cooperating teacher to plan differentiated instruction for students with IEPs in an inclusive classroom setting.</li><li>Utilized co-teaching models to increase curricular accessibility for students with and without disabilities.</li><li>Supported accommodations, modifications, and behavioral intervention strategies to encourage self-regulation.</li></ul></div>
+</div>
+</div>
+</section>
+
+<section id="showcase">
+<h2 class="section-title">Classroom Showcase</h2>
+<div class="card">
+<h3>A Few Moments From My Classroom</h3>
+<p>These photos highlight hands-on learning, fine motor development, classroom creativity, and student engagement. Student faces have been covered for privacy.</p>
+<div class="photo-grid"><img src="assets/classroom_collage.png" alt="Classroom photo collage"></div>
+</div>
+<div class="card"><h3>Lesson Highlight: The Very Hungry Caterpillar Sequencing</h3><p>This observation lesson focused on story sequencing, early literacy, participation, visual supports, and differentiated small-group instruction. Students identified key events from <em>The Very Hungry Caterpillar</em>, participated in an interactive “Feed the Caterpillar” activity, and completed sequencing work with individualized support.</p><a class="button" href="assets/very_hungry_caterpillar_lesson_plan.docx">View Lesson Plan</a></div>
+<div class="card"><h3>Weekly Planning Highlight: Plant & Flower Growth</h3><p>This weekly plan demonstrates integrated instruction across literacy, math, science, fine motor, sensory exploration, mindfulness, structured play, and social-emotional learning.</p><a class="button" href="assets/plant_flower_growth_weekly_lesson_plan.docx">View Weekly Lesson Plan</a></div>
+</section>
+
+<section id="growth">
+<h2 class="section-title">Reflection & Professional Growth</h2>
+<div class="card"><h3>Reflecting on My First Year of Teaching</h3><p>My first year of teaching has been one of the most rewarding and transformative experiences of my career. Working in a 12:1:2 preschool special education classroom challenged me to grow not only as an educator, but also as a leader, collaborator, and advocate for my students. Every day presented opportunities to reflect, adapt my instruction, strengthen relationships, and celebrate student growth—no matter how big or small.</p></div>
+<div class="grid">
+<div class="card"><h3>Leadership Within the Classroom</h3><p>I learned that successful classrooms are built on strong teamwork. I worked closely with my teaching assistants to establish clear expectations, divide responsibilities, and maintain a positive classroom culture.</p><p>I believe open, honest, and respectful communication is essential for building trust among classroom staff. By regularly discussing student progress, sharing observations, and problem-solving together, we created a collaborative environment where everyone felt valued and supported.</p></div>
+<div class="card"><h3>Consistency Across Learning Environments</h3><p>One of the greatest lessons I learned was the importance of consistency. Students thrive when expectations remain the same regardless of who is providing instruction.</p><p>Our team worked intentionally to implement the same visual supports, behavior expectations, reinforcement systems, prompting strategies, and instructional routines throughout the school day. This consistency helped students become more independent, confident, and successful during transitions and across academic settings.</p></div>
+<div class="card"><h3>Collaboration & Continuous Growth</h3><p>Throughout the year, I strengthened my collaboration with related service providers, administrators, and families to ensure students received consistent support across settings.</p><p>I also embraced feedback as an opportunity for growth. Reflecting on my practice helped me strengthen my classroom management, instructional planning, differentiation, and confidence as an educator. As I continue pursuing graduate studies in Teaching English to Speakers of Other Languages (ENL), I look forward to expanding my knowledge and continuing to grow professionally.</p></div>
+</div>
+<div class="card visual-card"><h3>Purposeful Small-Group Instruction</h3><p>I intentionally organized my small groups using <strong>heterogeneous grouping</strong> rather than grouping students solely by academic ability. Each group included no more than four students and was thoughtfully balanced with a variety of communication skills, learning styles, academic strengths, and peer models.</p><p>Each classroom table was color coded to create structure, predictability, and consistency across academic settings. Slides were presented for each rotation so students knew which group they belonged to, where to go, what activity to complete, and what to expect next.</p><p>This approach encouraged peer collaboration, language development, social interaction, and cooperative learning while still allowing me to differentiate instruction and provide individualized support based on each student's needs and IEP goals.</p><img src="assets/small_group_visual.png" alt="Small group color-coded classroom rotation visual"><div class="caption">Visual used to support small-group rotations, color-coded tables, classroom staff assignments, and predictable instructional routines.</div></div>
+</section>
+
+<section id="documents">
+<h2 class="section-title">Resume & Credentials</h2>
+<div class="card"><p>Below are my professional documents, including my full resume, lesson plans, and application materials.</p><a class="button" href="assets/resume.pdf">Download Resume</a><a class="button" href="assets/very_hungry_caterpillar_lesson_plan.docx">Observation Lesson Plan</a><a class="button" href="assets/plant_flower_growth_weekly_lesson_plan.docx">Weekly Lesson Plan</a><br><br><iframe src="assets/resume.pdf"></iframe></div>
+</section>
+
+<section id="recommendations">
+<h2 class="section-title">Recommendations</h2>
+<p style="text-align:center;max-width:800px;margin:0 auto 28px;">Throughout my preparation and first year of teaching, I have been fortunate to work alongside educators who have supported my growth and development. Their reflections speak to my commitment, passion, and dedication to students.</p>
+<div class="recommendation">
+<div class="card"><h3>Allison Shirreffs-Leek</h3><p><strong>1st Grade Teacher | Farmingdale School District</strong></p><div class="quote-box">“Gabriella naturally connected with the students and staff... She was seen as a true asset to our 1st grade team.”</div><a class="button" href="assets/allison_shirreffs_leek_recommendation.docx">Read Full Letter</a></div>
+<div class="card"><h3>Kathryn Feibusch</h3><p><strong>Elementary Special Education Teacher | Farmingdale School District</strong></p><div class="quote-box">“Gabriella demonstrated the skills, professionalism, and passion for teaching that make her an outstanding candidate for any school.”</div><a class="button" href="assets/kathryn_feibusch_recommendation.pdf">Read Full Letter</a></div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+<div class="card"><p>Thank you for taking the time to view my teaching portfolio. I look forward to connecting with you.</p><p><strong>Email:</strong> GabriellaSparacio@yahoo.com</p><p><strong>Phone:</strong> (516) 592-7271</p></div>
+</section>
+
+<div class="footer">© Gabriella Sparacio | Teaching Portfolio</div>
+</main>
+</div>
+<a class="backtop" href="#top">↑ Top</a>
+</body>
+</html>
